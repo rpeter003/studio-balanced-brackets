@@ -13,4 +13,16 @@ public class BalancedBracketsTests {
     public void testBasicBrackets() {
         assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
     }
+
+    @Test
+    public void testNestedBrackets() {
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[[]]"));
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[[][[]]]"));
+    }
+
+    @Test
+    public void imbalancedBrackets() {
+        // this failing test indicates a logic bug in .hasBalancedBrackets it should have returned False, but returned True!
+        assertFalse(BalancedBrackets.hasBalancedBrackets("]["));
+    }
 }

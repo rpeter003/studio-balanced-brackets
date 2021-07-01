@@ -26,6 +26,10 @@ public class BalancedBrackets {
             } else if (ch == ']') {
                 brackets--;
             }
+            // if at any point in time we've gone negative we have an imbalance! so we need to return false
+            if(brackets < 0) {
+                return false;
+            }
         }
         return brackets == 0;
     }
