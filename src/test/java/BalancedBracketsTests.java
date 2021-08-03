@@ -13,4 +13,27 @@ public class BalancedBracketsTests {
     public void testBasicBrackets() {
         assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
     }
+
+    @Test
+    public void testBackwardBrackets() { assertFalse(BalancedBrackets.hasBalancedBrackets("][")); }//should be false
+    // is true
+    @Test
+    public void testLaunchBrackets() { assertTrue(BalancedBrackets.hasBalancedBrackets("[LaunchCode]"));}
+    @Test
+    public void testInsideString() { assertTrue(BalancedBrackets.hasBalancedBrackets("Launch[Code]"));}
+    @Test
+    public void testBeforeString() { assertTrue(BalancedBrackets.hasBalancedBrackets("[]LaunchCode"));}
+    @Test
+    public void testAfterString() { assertTrue(BalancedBrackets.hasBalancedBrackets("LaunchCode[]"));}
+    @Test
+    public void testNoBrackets() { assertTrue(BalancedBrackets.hasBalancedBrackets(""));}
+    @Test
+    public void  testOneBracketString() { assertFalse(BalancedBrackets.hasBalancedBrackets("[LaunchCode"));}
+    @Test
+    public void testOneBracket() { assertFalse(BalancedBrackets.hasBalancedBrackets("["));}
+    @Test
+    public void testInsideStringBackwards() {assertFalse(BalancedBrackets.hasBalancedBrackets("Launch]Code["));}
 }
+
+
+//"[LaunchCode", "Launch]Code[", "[",
